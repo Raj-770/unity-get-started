@@ -1,0 +1,37 @@
+# Unity-generated folders (per project) — regenerated on open, never commit
+QuestDemo/[Ll]ibrary/
+QuestDemo/[Tt]emp/
+QuestDemo/[Oo]bj/
+QuestDemo/[Bb]uild/
+QuestDemo/[Bb]uilds/
+QuestDemo/[Ll]ogs/
+QuestDemo/[Uu]ser[Ss]ettings/
+QuestDemo/[Mm]emoryCaptures/
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!QuestDemo/[Aa]ssets/**/*.meta
+
+# Generated solution / project files
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.suo
+*.tmp
+*.unityproj
+
+# Crash / build reports
+sysinfo.txt
+crashlytics-build.properties
+*.apk
+*.aab
+*.unitypackage
+
+# OS / editor cruft
+.DS_Store
+.vs/
+.vscode/
+.idea/
