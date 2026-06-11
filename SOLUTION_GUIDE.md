@@ -14,11 +14,17 @@ Names matter: the `SceneSwitcher` script looks for scenes called **`VR`** and **
 
 ## 0. Before you start
 
-1. Open the `QuestDemo` project in Unity 6 (`6000.3.5f2`).
-2. Wait for the Meta XR SDK to finish importing. If the **Meta XR — Project Setup Tool** window pops
+1. Open the **`QuestDemo`** project in Unity 6 (`6000.3.5f2`). In Unity Hub make sure you add the
+   `QuestDemo` subfolder, **not** the repository root (the root is not a Unity project).
+2. **Handle the one-time first-launch prompts:**
+   - **Interaction SDK OpenXR Hand Skeleton Upgrade** dialog → **Use OpenXR Hand (Recommended)**.
+   - **"Changes to OVRPlugin detected … please restart"** → **File → Save**, then **restart Unity**
+     (quit and reopen `QuestDemo`) so the new plugin loads.
+   These appear only the first time the project is opened.
+3. Wait for the Meta XR SDK to finish importing. If the **Meta XR — Project Setup Tool** window pops
    up, click **Fix All**, then **Apply All**.
-3. Switch the platform to Android once: **File → Build Profiles → Android → Switch Platform**.
-4. Create a folder **`Assets/Scenes`** if it does not exist (right-click in the Project window →
+4. Switch the platform to Android once: **File → Build Profiles → Android → Switch Platform**.
+5. Create a folder **`Assets/Scenes`** if it does not exist (right-click in the Project window →
    **Create → Folder**).
 
 You will use two windows constantly — keep them open:
