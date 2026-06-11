@@ -31,10 +31,17 @@ Building Blocks into a scene and pressing **Build And Run**.
 
 ## 1. Open the project
 
-1. In **Unity Hub → Projects → Add → Add project from disk**, select the `QuestDemo` folder.
+1. In **Unity Hub → Projects → Add → Add project from disk**, select the **`QuestDemo`** subfolder
+   (the one containing `Assets`, `Packages`, `ProjectSettings`) — **not** the repository root.
 2. Open it with Unity 6. On first open Unity downloads the **Meta XR SDK** packages from the Unity
-   package registry — this can take a few minutes. Accept any "Restart Editor" / API-update prompts.
-3. If a **Meta XR — Project Setup Tool** window appears with warnings, click **Fix All** and
+   package registry — this can take a few minutes.
+3. **One-time Meta XR setup prompts** appear on the first launch — handle them like this:
+   - **Interaction SDK OpenXR Hand Skeleton Upgrade** dialog → click **Use OpenXR Hand
+     (Recommended)**. (This is a new project, so it's the recommended, future-proof choice.)
+   - **"Changes to OVRPlugin detected … please restart"** → **restart Unity** so the new plugin
+     loads. Save first (**File → Save**), then quit and reopen `QuestDemo`.
+   - Accept any other "Restart Editor" / API-update prompts.
+4. If a **Meta XR — Project Setup Tool** window appears with warnings, click **Fix All** and
    **Apply All**. (You can reopen it any time via **Meta → Tools → Project Setup Tool**.) This
    configures the Android player settings, color space, XR plug-in, etc. for Quest in one click.
 
