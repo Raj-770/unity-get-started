@@ -1,7 +1,7 @@
-# Feature: a grabbable cube whose color the slider controls
+# Feature 2 — a grabbable cube whose color the slider controls
 
-This adds a small interactive feature on top of the scenes from
-[`SOLUTION_GUIDE.md`](SOLUTION_GUIDE.md):
+This builds on the scenes from
+[`02-two-scenes-and-switch.md`](02-two-scenes-and-switch.md):
 
 - a **cube you can pick up** with your hands/controllers (Meta Interaction SDK grab), and
 - the **slider** on the UI panel now **changes the cube's color** (sweeping through the full
@@ -10,7 +10,7 @@ This adds a small interactive feature on top of the scenes from
 Do this in the **`VR`** scene first (it's easier to see against the virtual floor); you can repeat
 the exact same steps in the `Passthrough` scene.
 
-> The color logic is provided in [`Assets/Scripts/SliderColorChanger.cs`](QuestDemo/Assets/Scripts/SliderColorChanger.cs).
+> The color logic is provided in [`../QuestDemo/Assets/Scripts/SliderColorChanger.cs`](../QuestDemo/Assets/Scripts/SliderColorChanger.cs).
 > It maps a slider value (0..1) to hue and writes it via a `MaterialPropertyBlock`, so it works with
 > both the Built-in and URP lit shaders and creates no leaked material instances.
 
@@ -72,12 +72,16 @@ Open `Passthrough.unity` and repeat sections **1–3** so the grabbable color cu
 mixed reality. (Or copy the `ColorCube` object from the VR scene and re-link the slider event in the
 Passthrough scene, since cross-scene event references don't persist.)
 
-## 6. Commit
+## 6. Save your work (solution branch)
+
+From the repo root, if you're on the `solution` branch:
 
 ```bash
-git add Assets/Scenes QuestDemo/Assets/Scripts/SliderColorChanger.cs* ProjectSettings/EditorBuildSettings.asset
-git commit -m "Add grabbable color cube feature"
+git add QuestDemo/Assets/Scenes QuestDemo/ProjectSettings/EditorBuildSettings.asset
+git commit -m "Wire grabbable color cube into the scenes"
 ```
+
+(The `SliderColorChanger.cs` script itself is already committed on both branches.)
 
 ---
 
@@ -92,3 +96,8 @@ git commit -m "Add grabbable color cube feature"
   `Collider` (the default cube does) and a `Rigidbody`.
 - **Cube falls through the floor / flies away** → set the `Rigidbody` to **Is Kinematic**, or make
   sure the `Floor` has a collider.
+
+---
+
+**Next:** [`04-mqdh-and-simulator.md`](04-mqdh-and-simulator.md) — tools for deploying to the headset
+and testing without one.

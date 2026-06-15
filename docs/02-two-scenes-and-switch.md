@@ -1,33 +1,16 @@
-# Solution Guide — building the two scenes step by step
+# Feature 1 — two scenes and a switch button
 
-This is the **detailed walkthrough** for the `solution` branch. Follow it exactly and you will end
-up with the two finished scenes (`VR` and `Passthrough`) that the top-level [`README`](README.md)
-describes, plus a button that switches between them in the headset.
+Build two scenes — **`VR`** (fully virtual) and **`Passthrough`** (mixed reality) — plus a UI button
+that switches between them in the headset, using Meta's **Building Blocks**.
 
 Every step lists the **exact menu path**, the **GameObject names** to use, and the **values** to set.
 Names matter: the `SceneSwitcher` script looks for scenes called **`VR`** and **`Passthrough`**.
 
-> You are on the `solution` branch. Build the scenes here and commit them (last section). Keep `main`
-> as the empty starting point.
+> **Before you start:** complete [`01-setup.md`](01-setup.md) (project open, Project Setup Tool run,
+> Android platform selected, `Assets/Scenes` folder created). On `main` you build these scenes
+> yourself; the finished versions live on the **`solution`** branch if you want to compare.
 
----
-
-## 0. Before you start
-
-1. Open the **`QuestDemo`** project in Unity 6 (`6000.3.5f2`). In Unity Hub make sure you add the
-   `QuestDemo` subfolder, **not** the repository root (the root is not a Unity project).
-2. **Handle the one-time first-launch prompts:**
-   - **Interaction SDK OpenXR Hand Skeleton Upgrade** dialog → **Use OpenXR Hand (Recommended)**.
-   - **"Changes to OVRPlugin detected … please restart"** → **File → Save**, then **restart Unity**
-     (quit and reopen `QuestDemo`) so the new plugin loads.
-   These appear only the first time the project is opened.
-3. Wait for the Meta XR SDK to finish importing. If the **Meta XR — Project Setup Tool** window pops
-   up, click **Fix All**, then **Apply All**.
-4. Switch the platform to Android once: **File → Build Profiles → Android → Switch Platform**.
-5. Create a folder **`Assets/Scenes`** if it does not exist (right-click in the Project window →
-   **Create → Folder**).
-
-You will use two windows constantly — keep them open:
+Keep these windows open throughout:
 - **Building Blocks**: **Meta → Tools → Building Blocks**
 - The **Hierarchy** and **Inspector**.
 
@@ -149,36 +132,36 @@ The fastest correct way is to copy the VR scene, then swap the background for pa
 
 ---
 
-## 4. Build & run on the headset
+## 4. Build & run
 
-1. Connect the Quest 3 by USB-C (Developer Mode is already on).
-2. In **Build Profiles**, set **Run Device** to your headset (use the refresh icon if it's missing).
-3. Click **Build And Run**. Unity builds the APK, installs it, and launches it.
-4. In the headset: you start in **VR** (virtual floor + skybox). Poke **Go to Passthrough** → you're
-   now in the **Passthrough** scene, same panel floating in your real room. Poke **Go to VR** to
-   switch back. Drag the **slider** to confirm interactable UI works.
+Deploy to your headset — or test on your computer — to try it. You have three options, all detailed
+in [`04-mqdh-and-simulator.md`](04-mqdh-and-simulator.md):
 
-> Later, the app lives at **App Library → Unknown Sources → QuestDemo**.
+- **Unity Build And Run** — connect the headset, then **File → Build Profiles → Build And Run**.
+- **Meta Quest Developer Hub (MQDH)** — build an APK, then drag-and-drop it onto your device.
+- **Meta XR Simulator** — test on your PC/Mac with no headset (fastest iteration).
+
+In the headset you start in **VR** (virtual floor + skybox). Poke **Go to Passthrough** → the same
+panel now floats in your real room. Poke **Go to VR** to switch back. Drag the **slider** to confirm
+the interactable UI works.
+
+> Both scenes must be registered (section 3) or the switch button will fail. Once installed, the app
+> lives at **App Library → Unknown Sources → QuestDemo**.
 
 ---
 
-## 5. Commit the solution
+## 5. Save your work (solution branch)
 
-From the repo root (still on the `solution` branch):
+If you're on the `solution` branch and want to commit the finished scenes:
 
 ```bash
-git status                       # should show Assets/Scenes/VR.unity, Passthrough.unity, their .meta,
-                                 # ProjectSettings/EditorBuildSettings.asset, and a few OVR config assets
-git add -A
+git add Assets/Scenes ProjectSettings/EditorBuildSettings.asset
 git commit -m "Add solved VR and Passthrough scenes"
 ```
 
-That's the finished solution. `main` stays the clean starting point; `solution` now has the working
-scenes to compare against.
-
 ---
 
-## Troubleshooting (solution-specific)
+## Troubleshooting
 
 - **Poking the button does nothing** → the EventSystem must have a `PointableCanvasModule` and the
   canvas a `PointableCanvas` + `PokeInteractable`. Re-run **GameObject → Interaction SDK → Add Poke
@@ -191,3 +174,8 @@ scenes to compare against.
   and the names must be exactly `VR` and `Passthrough` (matching the `SceneSwitcher` fields).
 - **UI panel is huge or tiny** → it's the world-space Canvas scale; `0.001` on all axes is the sweet
   spot for a ~0.6 m panel.
+
+---
+
+**Next:** [`03-grabbable-color-cube.md`](03-grabbable-color-cube.md) — add a grabbable cube and give
+the slider a real job.
