@@ -2,8 +2,8 @@
 
 [VR Builder](https://www.mindport.co/vr-builder) (by MindPort) is an alternative, no-code toolkit
 for building VR experiences in Unity. Its big convenience is that **it auto-configures the XR
-environment for you**, so you can skip most of the manual project setup described in the main
-[`README`](README.md).
+environment for you**, so you can skip most of the manual project setup described in
+[`01-setup.md`](01-setup.md).
 
 ## Create the project
 
