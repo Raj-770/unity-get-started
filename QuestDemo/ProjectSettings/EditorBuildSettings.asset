@@ -4,6 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Passthrough.unity
+    guid: a9b901bb5134a470a9d806bcd131e257
+  - enabled: 1
+    path: Assets/Scenes/VR.unity
+    guid: c26e57b68cf164444ba8b6cf861bca09
+  m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 5465a083b5e5e4a589a78e7a11df87b1, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9dab07137d51841eba89160375c90061, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f0c8d6aee3ec04c53b7c571dd52ce925, type: 2}
   m_UseUCBPForAssetBundles: 0

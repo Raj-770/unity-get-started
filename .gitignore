@@ -29,6 +29,13 @@ crashlytics-build.properties
 *.apk
 *.aab
 *.unitypackage
+QuestDemo/mono_crash.mem.*
+QuestDemo/TempAssembly.dll
+QuestDemo/.utmp/
+
+# Unity crash-recovery snapshots
+QuestDemo/[Aa]ssets/_Recovery/
+QuestDemo/[Aa]ssets/_Recovery.meta
 
 # OS / editor cruft
 .DS_Store
